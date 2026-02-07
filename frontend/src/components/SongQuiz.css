@@ -1,0 +1,225 @@
+.quiz-desc {
+  color: var(--spotify-grey);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.quiz-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+}
+
+.round-badge {
+    background-color: var(--surface-color);
+    padding: 0.5rem 1rem;
+    border-radius: 500px;
+    font-weight: 700;
+    color: var(--spotify-white);
+}
+
+.quiz-score {
+  font-size: 1.5rem;
+  color: var(--spotify-green);
+  font-weight: 700;
+}
+
+.round-selection {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.round-btn {
+    background-color: var(--surface-color);
+    color: var(--spotify-white);
+    border: 1px solid transparent;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.round-btn:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--spotify-green);
+    transform: translateY(-2px);
+}
+
+.stats-card {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.stat-label {
+    color: var(--spotify-grey);
+    font-size: 1.1rem;
+}
+
+.stat-value {
+    color: var(--spotify-white);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.stat-value.gold {
+    color: #ffc107;
+    font-size: 2rem;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.option-card {
+  background-color: var(--surface-color);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.option-card:hover:not(:disabled) {
+  background-color: var(--surface-hover);
+  transform: translateY(-2px);
+}
+
+.option-card.correct {
+  background-color: rgba(29, 185, 84, 0.2);
+  border-color: var(--spotify-green);
+}
+
+.option-card.wrong {
+  background-color: rgba(229, 9, 20, 0.2);
+  border-color: #e50914;
+}
+
+.option-card.dimmed {
+  opacity: 0.5;
+}
+
+.option-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+}
+
+.option-info {
+  flex: 1;
+}
+
+.option-name {
+  color: var(--spotify-white);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.option-artist {
+  color: var(--spotify-grey);
+  font-size: 0.9rem;
+}
+
+.result-actions {
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.result-msg {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--spotify-white);
+}
+
+.points-earned {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ffc107; /* Gold color for points */
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+  margin-bottom: 2rem;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.start-btn, .next-btn {
+  background-color: var(--spotify-green);
+  color: black;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 500px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.start-btn:hover, .next-btn:hover {
+  transform: scale(1.05);
+  background-color: #1ed760;
+}
+
+@media (max-width: 600px) {
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .round-selection {
+      flex-direction: column;
+      gap: 1rem;
+  }
+}

@@ -1,0 +1,181 @@
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  background: #2a2a2a;
+  padding: 0.5rem;
+  border-radius: 500px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-form:focus-within {
+  background: #333;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.8rem 1.5rem;
+  border-radius: 500px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #b3b3b3;
+}
+
+.search-btn {
+  padding: 0.8rem 2rem;
+  border-radius: 500px;
+  border: none;
+  background-color: var(--spotify-green);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.search-btn:hover {
+  transform: scale(1.05);
+  background-color: #1ed760;
+  box-shadow: 0 0 15px rgba(30, 215, 96, 0.3);
+}
+
+/* Results Dropdown */
+.search-results {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  background-color: #282828;
+  border-radius: 12px;
+  max-height: 450px;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  animation: fadeIn 0.2s ease-out;
+  padding: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar styling */
+.search-results::-webkit-scrollbar {
+  width: 8px;
+}
+.search-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+.search-results::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  margin-bottom: 2px;
+}
+
+.search-result-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.search-result-image {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 4px; /* Default for tracks */
+}
+
+.search-result-image.is-artist {
+  border-radius: 50%; /* Circle for artists */
+}
+
+/* If it's an artist, we might want it round. 
+   We can add a class in Search.tsx conditionally. 
+   For now, let's stick to a nice rounded square which works for both. */
+
+.search-result-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-width: 0; /* Text truncation fix */
+}
+
+.search-result-name {
+  font-weight: 600;
+  color: white;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.search-result-subtitle {
+  font-size: 0.85rem;
+  color: #b3b3b3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-result-plays {
+  font-size: 0.75rem;
+  color: var(--spotify-green);
+  margin-top: 2px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.search-result-plays::before {
+  content: '▶';
+  font-size: 0.6rem;
+}
+
+.loading {
+  margin-top: 1rem;
+  color: var(--spotify-green);
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}

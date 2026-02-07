@@ -1,0 +1,100 @@
+/* App-level layout */
+
+/* App-level layout */
+
+/* App-level layout */
+
+.app-layout {
+  display: flex;
+  flex-direction: column; /* Stack navbar on top of content */
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #121212;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Scrollable content area */
+  position: relative;
+  width: 100%;
+}
+
+.app-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  flex: 1;
+}
+
+/* Utility for section headers */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Grid layout for cards (Top Tracks, etc.) */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Helper for centering content */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center;  Removed to avoid pushing content off-screen on small heights if we want top alignment with padding */
+  text-align: center;
+  min-height: 50vh;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Treemap container */
+.treemap-container {
+  width: 100%;
+  height: 500px;
+  background: var(--surface-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+/* History specific layout */
+.history-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 0; /* Reset extra spacing */
+}
+
+.history-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 3rem 0; /* Generous vertical spacing */
+  flex-wrap: wrap;
+}
+
+.history-buttons button {
+  min-width: 160px; /* Ensure buttons have consistent width */
+}

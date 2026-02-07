@@ -1,0 +1,247 @@
+.artist-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(29, 185, 84, 0.1), rgba(0, 0, 0, 0.3));
+  border-radius: 12px;
+}
+
+.artist-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.artist-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.artist-name {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+  color: var(--spotify-white);
+}
+
+.artist-stats {
+  display: flex;
+  gap: 2rem;
+  font-size: 1rem;
+  color: var(--spotify-grey);
+}
+
+.stat {
+  font-weight: 600;
+}
+
+.artist-genres {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.genre-tag {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 500px;
+  font-size: 0.85rem;
+  color: var(--spotify-white);
+  font-weight: 600;
+}
+
+.spotify-link {
+  display: inline-block;
+  background-color: var(--spotify-green);
+  color: black;
+  padding: 0.8rem 2rem;
+  border-radius: 500px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 0.2s;
+  width: fit-content;
+}
+
+.spotify-link:hover {
+  transform: scale(1.05);
+}
+
+.artist-section {
+  margin-bottom: 3rem;
+}
+
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.album-card {
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.album-card:hover {
+  background-color: var(--surface-hover);
+}
+
+.album-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-bottom: 0.8rem;
+}
+
+.album-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.user-stats-section {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  min-width: 120px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--spotify-green);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--spotify-grey);
+}
+
+.subsection-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--spotify-white);
+}
+
+.track-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.2s;
+}
+
+.track-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.track-rank {
+    width: 30px;
+    color: var(--spotify-grey);
+    font-weight: 700;
+}
+
+.track-name {
+    flex: 1;
+    font-weight: 500;
+    color: var(--spotify-white);
+}
+
+.track-plays {
+    color: var(--spotify-grey);
+    font-size: 0.9rem;
+}
+
+.playable-track {
+    cursor: pointer;
+}
+
+.playable-track:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.hint-text {
+    color: var(--spotify-grey);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.track-thumb {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    border-radius: 4px;
+}
+
+.track-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.track-album {
+    font-size: 0.8rem;
+    color: var(--spotify-grey);
+}
+
+.track-duration {
+    color: var(--spotify-grey);
+    font-size: 0.9rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.album-name {
+  font-weight: 700;
+  color: var(--spotify-white);
+  font-size: 0.95rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.album-year {
+  font-size: 0.85rem;
+  color: var(--spotify-grey);
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 1.2rem;
+  color: var(--spotify-grey);
+}
